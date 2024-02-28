@@ -89,11 +89,13 @@
 			// lbl_backtohome
 			// 
 			lbl_backtohome.AutoSize = true;
+			lbl_backtohome.Cursor = Cursors.Hand;
 			lbl_backtohome.Location = new Point(12, 9);
 			lbl_backtohome.Name = "lbl_backtohome";
 			lbl_backtohome.Size = new Size(102, 15);
 			lbl_backtohome.TabIndex = 11;
 			lbl_backtohome.Text = "<< Back To Home";
+			lbl_backtohome.Click += lbl_backtohome_Click;
 			// 
 			// btn_show
 			// 

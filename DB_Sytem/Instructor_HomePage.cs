@@ -17,13 +17,13 @@ namespace DB_Sytem
 			InitializeComponent();
 		}
 
-		private void button1_Click(object sender, EventArgs e)
-		{
-			this.Hide();
-			Instructor_Exam examWindow = new Instructor_Exam();
-			examWindow.ShowDialog();
-			this.Close();
-		}
+		//private void button1_Click(object sender, EventArgs e)
+		//{
+		//	this.Hide();
+		//	Instructor_Exam examWindow = new Instructor_Exam();
+		//	examWindow.ShowDialog();
+		//	this.Close();
+		//}
 
 		private void btn_allExams_Click(object sender, EventArgs e)
 		{
@@ -39,11 +39,11 @@ namespace DB_Sytem
 			examWindow.ShowDialog();
 			this.Close();
 		}
-		private void btn_studentsGrades_Click(object sender, EventArgs e)
+		private void btn_createQues_Click(object sender, EventArgs e)
 		{
 			this.Hide();
-			StudentsGrades stsGrades = new StudentsGrades();
-			stsGrades.ShowDialog();
+			CreateQuestions ques = new CreateQuestions();
+			ques.ShowDialog();
 			this.Close();
 		}
 		private void btn_answers_Click(object sender, EventArgs e)
@@ -53,5 +53,23 @@ namespace DB_Sytem
 			stsAnswers.ShowDialog();
 			this.Close();
 		}
+		private void btn_studentsGrades_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+			StudentsGrades stsGrades = new StudentsGrades();
+			stsGrades.ShowDialog();
+			this.Close();
+		}
+
+
+		private void lbl_logout_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+			Login login = new Login();
+			login.ShowDialog();
+			this.Close();
+		}
+
+		
 	}
 }
