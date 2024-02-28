@@ -1,0 +1,38 @@
+D:\ITI\DB_Project\DB_Sytem\DB_Sytem\bin\Debug\net8.0-windows\DB_Sytem.exe
+D:\ITI\DB_Project\DB_Sytem\DB_Sytem\bin\Debug\net8.0-windows\DB_Sytem.deps.json
+D:\ITI\DB_Project\DB_Sytem\DB_Sytem\bin\Debug\net8.0-windows\DB_Sytem.runtimeconfig.json
+D:\ITI\DB_Project\DB_Sytem\DB_Sytem\bin\Debug\net8.0-windows\DB_Sytem.dll
+D:\ITI\DB_Project\DB_Sytem\DB_Sytem\bin\Debug\net8.0-windows\DB_Sytem.pdb
+D:\ITI\DB_Project\DB_Sytem\DB_Sytem\obj\Debug\net8.0-windows\DB_Sytem.Login.resources
+D:\ITI\DB_Project\DB_Sytem\DB_Sytem\obj\Debug\net8.0-windows\DB_Sytem.csproj.GenerateResource.cache
+D:\ITI\DB_Project\DB_Sytem\DB_Sytem\obj\Debug\net8.0-windows\DB_Sytem.GeneratedMSBuildEditorConfig.editorconfig
+D:\ITI\DB_Project\DB_Sytem\DB_Sytem\obj\Debug\net8.0-windows\DB_Sytem.AssemblyInfoInputs.cache
+D:\ITI\DB_Project\DB_Sytem\DB_Sytem\obj\Debug\net8.0-windows\DB_Sytem.AssemblyInfo.cs
+D:\ITI\DB_Project\DB_Sytem\DB_Sytem\obj\Debug\net8.0-windows\DB_Sytem.csproj.CoreCompileInputs.cache
+D:\ITI\DB_Project\DB_Sytem\DB_Sytem\obj\Debug\net8.0-windows\DB_Sytem.dll
+D:\ITI\DB_Project\DB_Sytem\DB_Sytem\obj\Debug\net8.0-windows\refint\DB_Sytem.dll
+D:\ITI\DB_Project\DB_Sytem\DB_Sytem\obj\Debug\net8.0-windows\DB_Sytem.pdb
+D:\ITI\DB_Project\DB_Sytem\DB_Sytem\obj\Debug\net8.0-windows\DB_Sytem.genruntimeconfig.cache
+D:\ITI\DB_Project\DB_Sytem\DB_Sytem\obj\Debug\net8.0-windows\ref\DB_Sytem.dll
+D:\ITI\DB_Project\DB_Sytem\DB_Sytem\obj\Debug\net8.0-windows\DB_Sytem.Exam_Creation.resources
+D:\ITI\DB_Project\DB_Sytem\DB_Sytem\obj\Debug\net8.0-windows\DB_Sytem.Instructor_HomePage.resources
+F:\ITI (9 M)\Menofia\24. Advanced SQL\final project\ITI_Examination_System-main\DB_Sytem\bin\Debug\net8.0-windows\DB_Sytem.exe
+F:\ITI (9 M)\Menofia\24. Advanced SQL\final project\ITI_Examination_System-main\DB_Sytem\bin\Debug\net8.0-windows\DB_Sytem.deps.json
+F:\ITI (9 M)\Menofia\24. Advanced SQL\final project\ITI_Examination_System-main\DB_Sytem\bin\Debug\net8.0-windows\DB_Sytem.runtimeconfig.json
+F:\ITI (9 M)\Menofia\24. Advanced SQL\final project\ITI_Examination_System-main\DB_Sytem\bin\Debug\net8.0-windows\DB_Sytem.dll
+F:\ITI (9 M)\Menofia\24. Advanced SQL\final project\ITI_Examination_System-main\DB_Sytem\bin\Debug\net8.0-windows\DB_Sytem.pdb
+F:\ITI (9 M)\Menofia\24. Advanced SQL\final project\ITI_Examination_System-main\DB_Sytem\obj\Debug\net8.0-windows\DB_Sytem.Exam_Creation.resources
+F:\ITI (9 M)\Menofia\24. Advanced SQL\final project\ITI_Examination_System-main\DB_Sytem\obj\Debug\net8.0-windows\DB_Sytem.Instructor_HomePage.resources
+F:\ITI (9 M)\Menofia\24. Advanced SQL\final project\ITI_Examination_System-main\DB_Sytem\obj\Debug\net8.0-windows\DB_Sytem.Login.resources
+F:\ITI (9 M)\Menofia\24. Advanced SQL\final project\ITI_Examination_System-main\DB_Sytem\obj\Debug\net8.0-windows\DB_Sytem.csproj.GenerateResource.cache
+F:\ITI (9 M)\Menofia\24. Advanced SQL\final project\ITI_Examination_System-main\DB_Sytem\obj\Debug\net8.0-windows\DB_Sytem.GeneratedMSBuildEditorConfig.editorconfig
+F:\ITI (9 M)\Menofia\24. Advanced SQL\final project\ITI_Examination_System-main\DB_Sytem\obj\Debug\net8.0-windows\DB_Sytem.AssemblyInfoInputs.cache
+F:\ITI (9 M)\Menofia\24. Advanced SQL\final project\ITI_Examination_System-main\DB_Sytem\obj\Debug\net8.0-windows\DB_Sytem.AssemblyInfo.cs
+F:\ITI (9 M)\Menofia\24. Advanced SQL\final project\ITI_Examination_System-main\DB_Sytem\obj\Debug\net8.0-windows\DB_Sytem.csproj.CoreCompileInputs.cache
+F:\ITI (9 M)\Menofia\24. Advanced SQL\final project\ITI_Examination_System-main\DB_Sytem\obj\Debug\net8.0-windows\DB_Sytem.dll
+F:\ITI (9 M)\Menofia\24. Advanced SQL\final project\ITI_Examination_System-main\DB_Sytem\obj\Debug\net8.0-windows\refint\DB_Sytem.dll
+F:\ITI (9 M)\Menofia\24. Advanced SQL\final project\ITI_Examination_System-main\DB_Sytem\obj\Debug\net8.0-windows\DB_Sytem.pdb
+F:\ITI (9 M)\Menofia\24. Advanced SQL\final project\ITI_Examination_System-main\DB_Sytem\obj\Debug\net8.0-windows\DB_Sytem.genruntimeconfig.cache
+F:\ITI (9 M)\Menofia\24. Advanced SQL\final project\ITI_Examination_System-main\DB_Sytem\obj\Debug\net8.0-windows\ref\DB_Sytem.dll
+F:\ITI (9 M)\Menofia\24. Advanced SQL\final project\ITI_Examination_System-main\DB_Sytem\obj\Debug\net8.0-windows\DB_Sytem.Properties.Resources.resources
+F:\ITI (9 M)\Menofia\24. Advanced SQL\final project\ITI_Examination_System-main\DB_Sytem\obj\Debug\net8.0-windows\DB_Sytem.Instructor_Exam.resources
