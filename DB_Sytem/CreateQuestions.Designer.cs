@@ -55,6 +55,8 @@
 			label9 = new Label();
 			radioButton5 = new RadioButton();
 			radioButton6 = new RadioButton();
+			btn_update = new Button();
+			lbl_logout = new Label();
 			((System.ComponentModel.ISupportInitialize)dgv_CourseQuestions).BeginInit();
 			SuspendLayout();
 			// 
@@ -63,7 +65,7 @@
 			btn_insert.BackColor = Color.FromArgb(41, 128, 185);
 			btn_insert.FlatStyle = FlatStyle.Flat;
 			btn_insert.ForeColor = Color.White;
-			btn_insert.Location = new Point(323, 383);
+			btn_insert.Location = new Point(323, 329);
 			btn_insert.Name = "btn_insert";
 			btn_insert.Size = new Size(120, 34);
 			btn_insert.TabIndex = 17;
@@ -124,9 +126,9 @@
 			// dgv_CourseQuestions
 			// 
 			dgv_CourseQuestions.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dgv_CourseQuestions.Location = new Point(495, 21);
+			dgv_CourseQuestions.Location = new Point(465, 21);
 			dgv_CourseQuestions.Name = "dgv_CourseQuestions";
-			dgv_CourseQuestions.Size = new Size(478, 396);
+			dgv_CourseQuestions.Size = new Size(508, 396);
 			dgv_CourseQuestions.TabIndex = 19;
 			// 
 			// label1
@@ -331,11 +333,36 @@
 			radioButton6.Text = "False";
 			radioButton6.UseVisualStyleBackColor = true;
 			// 
+			// btn_update
+			// 
+			btn_update.BackColor = Color.Green;
+			btn_update.FlatStyle = FlatStyle.Flat;
+			btn_update.ForeColor = Color.White;
+			btn_update.Location = new Point(323, 378);
+			btn_update.Name = "btn_update";
+			btn_update.Size = new Size(120, 34);
+			btn_update.TabIndex = 17;
+			btn_update.Text = "Update";
+			btn_update.UseVisualStyleBackColor = false;
+			// 
+			// lbl_logout
+			// 
+			lbl_logout.AutoSize = true;
+			lbl_logout.Cursor = Cursors.Hand;
+			lbl_logout.ForeColor = Color.Crimson;
+			lbl_logout.Location = new Point(465, 3);
+			lbl_logout.Name = "lbl_logout";
+			lbl_logout.Size = new Size(50, 15);
+			lbl_logout.TabIndex = 22;
+			lbl_logout.Text = "Log Out";
+			lbl_logout.Click += lbl_logout_Click;
+			// 
 			// CreateQuestions
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(985, 432);
+			Controls.Add(lbl_logout);
 			Controls.Add(radioButton4);
 			Controls.Add(radioButton3);
 			Controls.Add(radioButton6);
@@ -350,6 +377,7 @@
 			Controls.Add(txt_questionText);
 			Controls.Add(dgv_CourseQuestions);
 			Controls.Add(lbl_backtohome);
+			Controls.Add(btn_update);
 			Controls.Add(btn_insert);
 			Controls.Add(label7);
 			Controls.Add(label6);
@@ -399,5 +427,7 @@
 		private Label label9;
 		private RadioButton radioButton5;
 		private RadioButton radioButton6;
+		private Button btn_update;
+		private Label lbl_logout;
 	}
 }

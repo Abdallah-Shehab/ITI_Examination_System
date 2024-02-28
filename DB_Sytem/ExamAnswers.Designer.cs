@@ -38,6 +38,7 @@
 			cb_students = new ComboBox();
 			label1 = new Label();
 			btn_chooseStudent = new Button();
+			lbl_logout = new Label();
 			((System.ComponentModel.ISupportInitialize)dgv_ExamAnswers).BeginInit();
 			SuspendLayout();
 			// 
@@ -144,11 +145,24 @@
 			btn_chooseStudent.Text = "Choose";
 			btn_chooseStudent.UseVisualStyleBackColor = false;
 			// 
+			// lbl_logout
+			// 
+			lbl_logout.AutoSize = true;
+			lbl_logout.Cursor = Cursors.Hand;
+			lbl_logout.ForeColor = Color.Crimson;
+			lbl_logout.Location = new Point(599, 9);
+			lbl_logout.Name = "lbl_logout";
+			lbl_logout.Size = new Size(50, 15);
+			lbl_logout.TabIndex = 27;
+			lbl_logout.Text = "Log Out";
+			lbl_logout.Click += lbl_logout_Click;
+			// 
 			// ExamAnswers
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(661, 450);
+			Controls.Add(lbl_logout);
 			Controls.Add(lbl_backtohome);
 			Controls.Add(btn_chooseStudent);
 			Controls.Add(btn_show);
@@ -178,5 +192,6 @@
 		private ComboBox cb_students;
 		private Label label1;
 		private Button btn_chooseStudent;
+		private Label lbl_logout;
 	}
 }

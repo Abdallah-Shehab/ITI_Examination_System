@@ -122,7 +122,7 @@
 			btn_createQues.Name = "btn_createQues";
 			btn_createQues.Size = new Size(189, 34);
 			btn_createQues.TabIndex = 1;
-			btn_createQues.Text = "Create Questions";
+			btn_createQues.Text = "Create and Update Questions";
 			btn_createQues.UseVisualStyleBackColor = false;
 			btn_createQues.Click += btn_createQues_Click;
 			// 

@@ -35,6 +35,7 @@
 			label2 = new Label();
 			lbl_backtohome = new Label();
 			btn_show = new Button();
+			lbl_logout = new Label();
 			((System.ComponentModel.ISupportInitialize)dgv_ExamQuestions).BeginInit();
 			SuspendLayout();
 			// 
@@ -109,11 +110,24 @@
 			btn_show.Text = "Show";
 			btn_show.UseVisualStyleBackColor = false;
 			// 
+			// lbl_logout
+			// 
+			lbl_logout.AutoSize = true;
+			lbl_logout.Cursor = Cursors.Hand;
+			lbl_logout.ForeColor = Color.Crimson;
+			lbl_logout.Location = new Point(552, 9);
+			lbl_logout.Name = "lbl_logout";
+			lbl_logout.Size = new Size(50, 15);
+			lbl_logout.TabIndex = 28;
+			lbl_logout.Text = "Log Out";
+			lbl_logout.Click += lbl_logout_Click;
+			// 
 			// ExamDetails
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(622, 450);
+			Controls.Add(lbl_logout);
 			Controls.Add(btn_show);
 			Controls.Add(lbl_backtohome);
 			Controls.Add(dgv_ExamQuestions);
@@ -137,5 +151,6 @@
 		private Label label2;
 		private Label lbl_backtohome;
 		private Button btn_show;
+		private Label lbl_logout;
 	}
 }

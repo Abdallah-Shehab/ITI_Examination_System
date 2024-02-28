@@ -24,5 +24,13 @@ namespace DB_Sytem
 			home.ShowDialog();
 			this.Close();
 		}
+
+		private void lbl_logout_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+			Login login = new Login();
+			login.ShowDialog();
+			this.Close();
+		}
 	}
 }
