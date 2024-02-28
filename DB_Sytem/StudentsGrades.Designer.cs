@@ -35,6 +35,7 @@
 			cb_courses = new ComboBox();
 			cb_departments = new ComboBox();
 			lbl_backtohome = new Label();
+			lbl_logout = new Label();
 			((System.ComponentModel.ISupportInitialize)dgv_ExamGrades).BeginInit();
 			SuspendLayout();
 			// 
@@ -101,17 +102,32 @@
 			// lbl_backtohome
 			// 
 			lbl_backtohome.AutoSize = true;
+			lbl_backtohome.Cursor = Cursors.Hand;
 			lbl_backtohome.Location = new Point(12, 9);
 			lbl_backtohome.Name = "lbl_backtohome";
 			lbl_backtohome.Size = new Size(102, 15);
 			lbl_backtohome.TabIndex = 19;
 			lbl_backtohome.Text = "<< Back To Home";
+			lbl_backtohome.Click += lbl_backtohome_Click;
+			// 
+			// lbl_logout
+			// 
+			lbl_logout.AutoSize = true;
+			lbl_logout.Cursor = Cursors.Hand;
+			lbl_logout.ForeColor = Color.Crimson;
+			lbl_logout.Location = new Point(558, 9);
+			lbl_logout.Name = "lbl_logout";
+			lbl_logout.Size = new Size(50, 15);
+			lbl_logout.TabIndex = 29;
+			lbl_logout.Text = "Log Out";
+			lbl_logout.Click += lbl_logout_Click;
 			// 
 			// StudentsGrades
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(640, 450);
+			Controls.Add(lbl_logout);
 			Controls.Add(lbl_backtohome);
 			Controls.Add(btn_show);
 			Controls.Add(dgv_ExamGrades);
@@ -135,5 +151,6 @@
 		private ComboBox cb_courses;
 		private ComboBox cb_departments;
 		private Label lbl_backtohome;
+		private Label lbl_logout;
 	}
 }

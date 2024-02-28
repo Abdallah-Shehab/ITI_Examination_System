@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DB_Sytem
 {
-	public partial class StudentsGrades : Form
+	public partial class CreateQuestions : Form
 	{
-		public StudentsGrades()
+		public CreateQuestions()
 		{
 			InitializeComponent();
 		}

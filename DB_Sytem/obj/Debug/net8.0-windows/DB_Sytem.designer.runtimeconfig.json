@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\SHaFiQ\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\SHaFiQ\\.nuget\\packages"
+      "C:\\Users\\azzag\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\azzag\\.nuget\\packages"
     ],
     "configProperties": {
       "System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization": true,

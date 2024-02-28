@@ -33,7 +33,8 @@
 			btn_answers = new Button();
 			btn_studentsGrades = new Button();
 			lbl_logout = new Label();
-			label1 = new Label();
+			lbl_insName = new Label();
+			btn_createQues = new Button();
 			SuspendLayout();
 			// 
 			// btn_allExams
@@ -41,7 +42,7 @@
 			btn_allExams.BackColor = Color.FromArgb(41, 128, 185);
 			btn_allExams.FlatStyle = FlatStyle.Flat;
 			btn_allExams.ForeColor = Color.White;
-			btn_allExams.Location = new Point(117, 168);
+			btn_allExams.Location = new Point(117, 158);
 			btn_allExams.Name = "btn_allExams";
 			btn_allExams.Size = new Size(189, 34);
 			btn_allExams.TabIndex = 1;
@@ -54,7 +55,7 @@
 			btn_createExam.BackColor = Color.FromArgb(41, 128, 185);
 			btn_createExam.FlatStyle = FlatStyle.Flat;
 			btn_createExam.ForeColor = Color.White;
-			btn_createExam.Location = new Point(117, 208);
+			btn_createExam.Location = new Point(117, 198);
 			btn_createExam.Name = "btn_createExam";
 			btn_createExam.Size = new Size(189, 34);
 			btn_createExam.TabIndex = 1;
@@ -67,7 +68,7 @@
 			btn_answers.BackColor = Color.FromArgb(41, 128, 185);
 			btn_answers.FlatStyle = FlatStyle.Flat;
 			btn_answers.ForeColor = Color.White;
-			btn_answers.Location = new Point(117, 248);
+			btn_answers.Location = new Point(117, 278);
 			btn_answers.Name = "btn_answers";
 			btn_answers.Size = new Size(189, 34);
 			btn_answers.TabIndex = 1;
@@ -80,7 +81,7 @@
 			btn_studentsGrades.BackColor = Color.FromArgb(41, 128, 185);
 			btn_studentsGrades.FlatStyle = FlatStyle.Flat;
 			btn_studentsGrades.ForeColor = Color.White;
-			btn_studentsGrades.Location = new Point(117, 288);
+			btn_studentsGrades.Location = new Point(117, 318);
 			btn_studentsGrades.Name = "btn_studentsGrades";
 			btn_studentsGrades.Size = new Size(189, 34);
 			btn_studentsGrades.TabIndex = 1;
@@ -98,28 +99,42 @@
 			lbl_logout.Size = new Size(50, 15);
 			lbl_logout.TabIndex = 12;
 			lbl_logout.Text = "Log Out";
+			lbl_logout.Click += lbl_logout_Click;
 			// 
-			// label1
+			// lbl_insName
 			// 
-			label1.AutoSize = true;
-			label1.Cursor = Cursors.Hand;
-			label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label1.ForeColor = Color.FromArgb(41, 128, 185);
-			label1.Location = new Point(66, 67);
-			label1.Name = "label1";
-			label1.Size = new Size(284, 30);
-			label1.TabIndex = 12;
-			label1.Text = "Welcome Instructor's Name";
-			label1.TextAlign = ContentAlignment.MiddleCenter;
+			lbl_insName.AutoSize = true;
+			lbl_insName.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			lbl_insName.ForeColor = Color.FromArgb(41, 128, 185);
+			lbl_insName.Location = new Point(66, 67);
+			lbl_insName.Name = "lbl_insName";
+			lbl_insName.Size = new Size(284, 30);
+			lbl_insName.TabIndex = 12;
+			lbl_insName.Text = "Welcome Instructor's Name";
+			lbl_insName.TextAlign = ContentAlignment.MiddleCenter;
+			// 
+			// btn_createQues
+			// 
+			btn_createQues.BackColor = Color.FromArgb(41, 128, 185);
+			btn_createQues.FlatStyle = FlatStyle.Flat;
+			btn_createQues.ForeColor = Color.White;
+			btn_createQues.Location = new Point(117, 238);
+			btn_createQues.Name = "btn_createQues";
+			btn_createQues.Size = new Size(189, 34);
+			btn_createQues.TabIndex = 1;
+			btn_createQues.Text = "Create and Update Questions";
+			btn_createQues.UseVisualStyleBackColor = false;
+			btn_createQues.Click += btn_createQues_Click;
 			// 
 			// Instructor_HomePage
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(418, 415);
-			Controls.Add(label1);
+			Controls.Add(lbl_insName);
 			Controls.Add(lbl_logout);
 			Controls.Add(btn_studentsGrades);
+			Controls.Add(btn_createQues);
 			Controls.Add(btn_answers);
 			Controls.Add(btn_createExam);
 			Controls.Add(btn_allExams);
@@ -136,6 +151,7 @@
 		private Button btn_answers;
 		private Button btn_studentsGrades;
 		private Label lbl_logout;
-		private Label label1;
+		private Label lbl_insName;
+		private Button btn_createQues;
 	}
 }

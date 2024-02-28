@@ -41,6 +41,10 @@
 			comboBox2 = new ComboBox();
 			groupBox2 = new GroupBox();
 			groupBox3 = new GroupBox();
+			dt_time = new DateTimePicker();
+			dt_date = new DateTimePicker();
+			textBox1 = new TextBox();
+			label6 = new Label();
 			label5 = new Label();
 			numericUpDown1 = new NumericUpDown();
 			label2 = new Label();
@@ -51,10 +55,7 @@
 			comboBox3 = new ComboBox();
 			comboBox4 = new ComboBox();
 			button10 = new Button();
-			textBox1 = new TextBox();
-			label6 = new Label();
-			dt_time = new DateTimePicker();
-			dt_date = new DateTimePicker();
+			lbl_backtohome = new Label();
 			groupBox1.SuspendLayout();
 			groupBox2.SuspendLayout();
 			groupBox3.SuspendLayout();
@@ -235,6 +236,43 @@
 			groupBox3.TabStop = false;
 			groupBox3.Text = "New Exam";
 			// 
+			// dt_time
+			// 
+			dt_time.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+			dt_time.Format = DateTimePickerFormat.Time;
+			dt_time.Location = new Point(228, 111);
+			dt_time.Name = "dt_time";
+			dt_time.Size = new Size(173, 26);
+			dt_time.TabIndex = 15;
+			// 
+			// dt_date
+			// 
+			dt_date.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+			dt_date.Format = DateTimePickerFormat.Short;
+			dt_date.ImeMode = ImeMode.Katakana;
+			dt_date.Location = new Point(26, 111);
+			dt_date.Name = "dt_date";
+			dt_date.Size = new Size(173, 26);
+			dt_date.TabIndex = 14;
+			// 
+			// textBox1
+			// 
+			textBox1.Location = new Point(430, 54);
+			textBox1.Name = "textBox1";
+			textBox1.Size = new Size(171, 29);
+			textBox1.TabIndex = 10;
+			// 
+			// label6
+			// 
+			label6.AutoSize = true;
+			label6.Font = new Font("Segoe UI", 10F);
+			label6.ForeColor = Color.FromArgb(41, 128, 185);
+			label6.Location = new Point(430, 32);
+			label6.Name = "label6";
+			label6.Size = new Size(46, 19);
+			label6.TabIndex = 7;
+			label6.Text = "Grade";
+			// 
 			// label5
 			// 
 			label5.AutoSize = true;
@@ -339,42 +377,16 @@
 			button10.Text = "Generate";
 			button10.UseVisualStyleBackColor = false;
 			// 
-			// textBox1
+			// lbl_backtohome
 			// 
-			textBox1.Location = new Point(430, 54);
-			textBox1.Name = "textBox1";
-			textBox1.Size = new Size(171, 29);
-			textBox1.TabIndex = 10;
-			// 
-			// label6
-			// 
-			label6.AutoSize = true;
-			label6.Font = new Font("Segoe UI", 10F);
-			label6.ForeColor = Color.FromArgb(41, 128, 185);
-			label6.Location = new Point(430, 32);
-			label6.Name = "label6";
-			label6.Size = new Size(46, 19);
-			label6.TabIndex = 7;
-			label6.Text = "Grade";
-			// 
-			// dt_time
-			// 
-			dt_time.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-			dt_time.Format = DateTimePickerFormat.Time;
-			dt_time.Location = new Point(228, 111);
-			dt_time.Name = "dt_time";
-			dt_time.Size = new Size(173, 26);
-			dt_time.TabIndex = 15;
-			// 
-			// dt_date
-			// 
-			dt_date.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-			dt_date.Format = DateTimePickerFormat.Short;
-			dt_date.ImeMode = ImeMode.Katakana;
-			dt_date.Location = new Point(26, 111);
-			dt_date.Name = "dt_date";
-			dt_date.Size = new Size(173, 26);
-			dt_date.TabIndex = 14;
+			lbl_backtohome.AutoSize = true;
+			lbl_backtohome.Cursor = Cursors.Hand;
+			lbl_backtohome.Location = new Point(0, 0);
+			lbl_backtohome.Name = "lbl_backtohome";
+			lbl_backtohome.Size = new Size(102, 15);
+			lbl_backtohome.TabIndex = 12;
+			lbl_backtohome.Text = "<< Back To Home";
+			lbl_backtohome.Click += lbl_backtohome_Click;
 			// 
 			// Instructor_Exam
 			// 
@@ -382,6 +394,7 @@
 			AutoScaleMode = AutoScaleMode.Font;
 			AutoSize = true;
 			ClientSize = new Size(972, 530);
+			Controls.Add(lbl_backtohome);
 			Controls.Add(groupBox1);
 			Controls.Add(groupBox3);
 			Controls.Add(groupBox2);
@@ -395,6 +408,7 @@
 			((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
 			((System.ComponentModel.ISupportInitialize)dgv_ExamQuestions).EndInit();
 			ResumeLayout(false);
+			PerformLayout();
 		}
 
 		#endregion
@@ -426,5 +440,6 @@
 		private Label label6;
 		private DateTimePicker dt_time;
 		private DateTimePicker dt_date;
+		private Label lbl_backtohome;
 	}
 }
