@@ -17,6 +17,7 @@ namespace DB_Sytem.Models
         Task<int> Delete_DepartmentAsync(int? dept_ID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<delete_examResult>> delete_examAsync(int? id, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<Delete_QuestionResult>> Delete_QuestionAsync(int? questionId, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<delete_st_examResult>> delete_st_examAsync(int? stId, int? examId, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<deleteCourseResult>> deleteCourseAsync(int? ID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<DeleteETopicResult>> DeleteETopicAsync(string Topic, int? CourseID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<int> DeleteStudentCourseAsync(int? std_id, int? course_id, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
@@ -24,6 +25,7 @@ namespace DB_Sytem.Models
         Task<List<Dept_ins_InsertResult>> Dept_ins_InsertAsync(int? dept_id, int? ins_id, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<Dept_ins_SelectResult>> Dept_ins_SelectAsync(OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<Dept_ins_UpdateResult>> Dept_ins_UpdateAsync(int? dept_id, int? ins_id, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<Generate_ExamResult>> Generate_ExamAsync(TimeSpan? time, DateTime? date, int? duration, int? crsID, OutputParameter<int?> exam_id, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<INS_deleteResult>> INS_deleteAsync(int? INS_id, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<Ins_Dept_Crs_DeleteResult>> Ins_Dept_Crs_DeleteAsync(int? dept_id, int? ins_id, int? course_id, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<Ins_Dept_Crs_InsertResult>> Ins_Dept_Crs_InsertAsync(int? dept_id, int? ins_id, int? course_id, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
@@ -35,9 +37,10 @@ namespace DB_Sytem.Models
         Task<int> Insert_BranchDeptAsync(int? branch_ID, int? dept_ID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<int> Insert_BrancheAsync(int? branch_ID, string name, string location, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<int> Insert_DepartmentAsync(string name, int? manager_ID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
-        Task<int> insert_examAsync(TimeSpan? time, DateTime? date, int? duration, int? crsID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<int> insert_examAsync(TimeSpan? time, DateTime? date, int? duration, int? crsID, OutputParameter<int?> new_exam_id, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<insert_ExamQuestionResult>> insert_ExamQuestionAsync(int? ExamID, int? QuestionID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<insert_QuestionResult>> insert_QuestionAsync(string Text, string Type, string CorrectAns, int? Grade, int? CourseID, string option1, string option2, string option3, string option4, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<insert_st_examResult>> insert_st_examAsync(int? stIdint, int? examId, int? totalDgree, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<int> insertCourseAsync(string Name, int? duration, int? grade, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<Select_BrancheResult>> Select_BrancheAsync(OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<Select_DepartmentResult>> Select_DepartmentAsync(OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
@@ -53,6 +56,7 @@ namespace DB_Sytem.Models
         Task<int> Update_DepartmentAsync(int? dept_ID, string name, int? manager_ID, DateTime? hire_date, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<update_examQuestionResult>> update_examQuestionAsync(int? ExamID, int? oldQuestionId, int? newQuestionId, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<update_questionResult>> update_questionAsync(int? questionId, string Text, string Type, string CorrectAns, int? Grade, int? CourseID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<int> update_st_examAsync(int? stId, int? examId, int? totalDgree, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<updateCourseResult>> updateCourseAsync(int? ID, string Name, int? Duration, int? Grade, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<UpdateStudentCourseResult>> UpdateStudentCourseAsync(int? st_id, int? crs_id, int? newCrs_id, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<UpdateTopicResult>> UpdateTopicAsync(string Topic, int? CourseID, int? NewCourseID, string NewTopic, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);

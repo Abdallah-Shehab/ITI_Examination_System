@@ -11,7 +11,9 @@ namespace DB_Sytem
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Login());
+            Application.Run(new Student_HomePage());
+            //Application.Run(new Instructor_Exam());
+            //   Application.Run(new Login());
         }
     }
 }

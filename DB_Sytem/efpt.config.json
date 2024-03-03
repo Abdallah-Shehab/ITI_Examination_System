@@ -100,6 +100,10 @@
          "ObjectType": 1
       },
       {
+         "Name": "[dbo].[delete_st_exam]",
+         "ObjectType": 1
+      },
+      {
          "Name": "[dbo].[deleteCourse]",
          "ObjectType": 1
       },
@@ -125,6 +129,10 @@
       },
       {
          "Name": "[dbo].[Dept_ins_Update]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[Generate_Exam]",
          "ObjectType": 1
       },
       {
@@ -181,6 +189,10 @@
       },
       {
          "Name": "[dbo].[insert_Question]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[insert_st_exam]",
          "ObjectType": 1
       },
       {
@@ -245,6 +257,10 @@
       },
       {
          "Name": "[dbo].[update_question]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[update_st_exam]",
          "ObjectType": 1
       },
       {

@@ -44,7 +44,7 @@ namespace DB_Sytem
                     if (stud != null)
                     {
                         this.Hide();
-                        Student_HomePage st_page = new Student_HomePage(txt_name.Text);
+                        Student_HomePage st_page = new Student_HomePage(txt_name.Text, int.Parse(txt_pass.Text));
 
 
                         st_page.ShowDialog();

@@ -36,12 +36,14 @@ namespace DB_Sytem.Models
         {
             modelBuilder.Entity<delete_examResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<Delete_QuestionResult>().HasNoKey().ToView(null);
+            modelBuilder.Entity<delete_st_examResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<deleteCourseResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<DeleteETopicResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<Dept_ins_DeleteResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<Dept_ins_InsertResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<Dept_ins_SelectResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<Dept_ins_UpdateResult>().HasNoKey().ToView(null);
+            modelBuilder.Entity<Generate_ExamResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<INS_deleteResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<Ins_Dept_Crs_DeleteResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<Ins_Dept_Crs_InsertResult>().HasNoKey().ToView(null);
@@ -52,6 +54,7 @@ namespace DB_Sytem.Models
             modelBuilder.Entity<INS_updateResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<insert_ExamQuestionResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<insert_QuestionResult>().HasNoKey().ToView(null);
+            modelBuilder.Entity<insert_st_examResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<Select_BrancheResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<Select_DepartmentResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<select_examResult>().HasNoKey().ToView(null);
@@ -208,6 +211,38 @@ namespace DB_Sytem.Models
                 parameterreturnValue,
             };
             var _ = await _context.SqlQueryAsync<Delete_QuestionResult>("EXEC @returnValue = [dbo].[Delete_Question] @questionId", sqlParameters, cancellationToken);
+
+            returnValue?.SetValue(parameterreturnValue.Value);
+
+            return _;
+        }
+
+        public virtual async Task<List<delete_st_examResult>> delete_st_examAsync(int? stId, int? examId, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
+        {
+            var parameterreturnValue = new SqlParameter
+            {
+                ParameterName = "returnValue",
+                Direction = System.Data.ParameterDirection.Output,
+                SqlDbType = System.Data.SqlDbType.Int,
+            };
+
+            var sqlParameters = new []
+            {
+                new SqlParameter
+                {
+                    ParameterName = "stId",
+                    Value = stId ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.Int,
+                },
+                new SqlParameter
+                {
+                    ParameterName = "examId",
+                    Value = examId ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.Int,
+                },
+                parameterreturnValue,
+            };
+            var _ = await _context.SqlQueryAsync<delete_st_examResult>("EXEC @returnValue = [dbo].[delete_st_exam] @stId, @examId", sqlParameters, cancellationToken);
 
             returnValue?.SetValue(parameterreturnValue.Value);
 
@@ -410,6 +445,60 @@ namespace DB_Sytem.Models
             };
             var _ = await _context.SqlQueryAsync<Dept_ins_UpdateResult>("EXEC @returnValue = [dbo].[Dept_ins_Update] @dept_id, @ins_id", sqlParameters, cancellationToken);
 
+            returnValue?.SetValue(parameterreturnValue.Value);
+
+            return _;
+        }
+
+        public virtual async Task<List<Generate_ExamResult>> Generate_ExamAsync(TimeSpan? time, DateTime? date, int? duration, int? crsID, OutputParameter<int?> exam_id, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
+        {
+            var parameterexam_id = new SqlParameter
+            {
+                ParameterName = "exam_id",
+                Direction = System.Data.ParameterDirection.InputOutput,
+                Value = exam_id?._value ?? Convert.DBNull,
+                SqlDbType = System.Data.SqlDbType.Int,
+            };
+            var parameterreturnValue = new SqlParameter
+            {
+                ParameterName = "returnValue",
+                Direction = System.Data.ParameterDirection.Output,
+                SqlDbType = System.Data.SqlDbType.Int,
+            };
+
+            var sqlParameters = new []
+            {
+                new SqlParameter
+                {
+                    ParameterName = "time",
+                    Scale = 7,
+                    Value = time ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.Time,
+                },
+                new SqlParameter
+                {
+                    ParameterName = "date",
+                    Value = date ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.Date,
+                },
+                new SqlParameter
+                {
+                    ParameterName = "duration",
+                    Value = duration ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.Int,
+                },
+                new SqlParameter
+                {
+                    ParameterName = "crsID",
+                    Value = crsID ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.Int,
+                },
+                parameterexam_id,
+                parameterreturnValue,
+            };
+            var _ = await _context.SqlQueryAsync<Generate_ExamResult>("EXEC @returnValue = [dbo].[Generate_Exam] @time, @date, @duration, @crsID, @exam_id OUTPUT", sqlParameters, cancellationToken);
+
+            exam_id.SetValue(parameterexam_id.Value);
             returnValue?.SetValue(parameterreturnValue.Value);
 
             return _;
@@ -820,8 +909,15 @@ namespace DB_Sytem.Models
             return _;
         }
 
-        public virtual async Task<int> insert_examAsync(TimeSpan? time, DateTime? date, int? duration, int? crsID, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
+        public virtual async Task<int> insert_examAsync(TimeSpan? time, DateTime? date, int? duration, int? crsID, OutputParameter<int?> new_exam_id, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
         {
+            var parameternew_exam_id = new SqlParameter
+            {
+                ParameterName = "new_exam_id",
+                Direction = System.Data.ParameterDirection.InputOutput,
+                Value = new_exam_id?._value ?? Convert.DBNull,
+                SqlDbType = System.Data.SqlDbType.Int,
+            };
             var parameterreturnValue = new SqlParameter
             {
                 ParameterName = "returnValue",
@@ -856,10 +952,12 @@ namespace DB_Sytem.Models
                     Value = crsID ?? Convert.DBNull,
                     SqlDbType = System.Data.SqlDbType.Int,
                 },
+                parameternew_exam_id,
                 parameterreturnValue,
             };
-            var _ = await _context.Database.ExecuteSqlRawAsync("EXEC @returnValue = [dbo].[insert_exam] @time, @date, @duration, @crsID", sqlParameters, cancellationToken);
+            var _ = await _context.Database.ExecuteSqlRawAsync("EXEC @returnValue = [dbo].[insert_exam] @time, @date, @duration, @crsID, @new_exam_id OUTPUT", sqlParameters, cancellationToken);
 
+            new_exam_id.SetValue(parameternew_exam_id.Value);
             returnValue?.SetValue(parameterreturnValue.Value);
 
             return _;
@@ -972,6 +1070,44 @@ namespace DB_Sytem.Models
                 parameterreturnValue,
             };
             var _ = await _context.SqlQueryAsync<insert_QuestionResult>("EXEC @returnValue = [dbo].[insert_Question] @Text, @Type, @CorrectAns, @Grade, @CourseID, @option1, @option2, @option3, @option4", sqlParameters, cancellationToken);
+
+            returnValue?.SetValue(parameterreturnValue.Value);
+
+            return _;
+        }
+
+        public virtual async Task<List<insert_st_examResult>> insert_st_examAsync(int? stIdint, int? examId, int? totalDgree, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
+        {
+            var parameterreturnValue = new SqlParameter
+            {
+                ParameterName = "returnValue",
+                Direction = System.Data.ParameterDirection.Output,
+                SqlDbType = System.Data.SqlDbType.Int,
+            };
+
+            var sqlParameters = new []
+            {
+                new SqlParameter
+                {
+                    ParameterName = "stIdint",
+                    Value = stIdint ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.Int,
+                },
+                new SqlParameter
+                {
+                    ParameterName = "examId",
+                    Value = examId ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.Int,
+                },
+                new SqlParameter
+                {
+                    ParameterName = "totalDgree",
+                    Value = totalDgree ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.Int,
+                },
+                parameterreturnValue,
+            };
+            var _ = await _context.SqlQueryAsync<insert_st_examResult>("EXEC @returnValue = [dbo].[insert_st_exam] @stIdint, @examId, @totalDgree", sqlParameters, cancellationToken);
 
             returnValue?.SetValue(parameterreturnValue.Value);
 
@@ -1423,6 +1559,44 @@ namespace DB_Sytem.Models
                 parameterreturnValue,
             };
             var _ = await _context.SqlQueryAsync<update_questionResult>("EXEC @returnValue = [dbo].[update_question] @questionId, @Text, @Type, @CorrectAns, @Grade, @CourseID", sqlParameters, cancellationToken);
+
+            returnValue?.SetValue(parameterreturnValue.Value);
+
+            return _;
+        }
+
+        public virtual async Task<int> update_st_examAsync(int? stId, int? examId, int? totalDgree, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
+        {
+            var parameterreturnValue = new SqlParameter
+            {
+                ParameterName = "returnValue",
+                Direction = System.Data.ParameterDirection.Output,
+                SqlDbType = System.Data.SqlDbType.Int,
+            };
+
+            var sqlParameters = new []
+            {
+                new SqlParameter
+                {
+                    ParameterName = "stId",
+                    Value = stId ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.Int,
+                },
+                new SqlParameter
+                {
+                    ParameterName = "examId",
+                    Value = examId ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.Int,
+                },
+                new SqlParameter
+                {
+                    ParameterName = "totalDgree",
+                    Value = totalDgree ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.Int,
+                },
+                parameterreturnValue,
+            };
+            var _ = await _context.Database.ExecuteSqlRawAsync("EXEC @returnValue = [dbo].[update_st_exam] @stId, @examId, @totalDgree", sqlParameters, cancellationToken);
 
             returnValue?.SetValue(parameterreturnValue.Value);
 

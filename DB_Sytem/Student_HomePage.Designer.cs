@@ -30,6 +30,9 @@
         {
             label2 = new Label();
             lbl_studentName = new Label();
+            dgv_exams = new DataGridView();
+            btn_start = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgv_exams).BeginInit();
             SuspendLayout();
             // 
             // label2
@@ -53,16 +56,39 @@
             lbl_studentName.Size = new Size(0, 25);
             lbl_studentName.TabIndex = 3;
             // 
+            // dgv_exams
+            // 
+            dgv_exams.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgv_exams.Location = new Point(3, 71);
+            dgv_exams.Name = "dgv_exams";
+            dgv_exams.Size = new Size(797, 286);
+            dgv_exams.TabIndex = 4;
+            dgv_exams.RowHeaderMouseDoubleClick += dgv_exams_RowHeaderMouseDoubleClick;
+            // 
+            // btn_start
+            // 
+            btn_start.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_start.Location = new Point(12, 374);
+            btn_start.Name = "btn_start";
+            btn_start.Size = new Size(156, 33);
+            btn_start.TabIndex = 5;
+            btn_start.Text = "Start Exam";
+            btn_start.UseVisualStyleBackColor = true;
+            btn_start.Click += btn_start_Click;
+            // 
             // Student_HomePage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btn_start);
+            Controls.Add(dgv_exams);
             Controls.Add(lbl_studentName);
             Controls.Add(label2);
             Name = "Student_HomePage";
             Text = "Student_HomePage";
             Load += Student_HomePage_Load;
+            ((System.ComponentModel.ISupportInitialize)dgv_exams).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -71,5 +97,7 @@
 
         private Label label2;
         private Label lbl_studentName;
+        private DataGridView dgv_exams;
+        private Button btn_start;
     }
 }
