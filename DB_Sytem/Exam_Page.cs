@@ -30,6 +30,8 @@ namespace DB_Sytem
             remainingSeconds = totalSeconds;
             UpdateTimeLabel();
 
+
+
         }
 
         private void Exam_Page_Load(object sender, EventArgs e)
@@ -38,6 +40,7 @@ namespace DB_Sytem
             .Where(q => q.exams.Any(e => e.exam_ID == Exam_id))
             .Select(i => new
             {
+                i.question_ID,
                 i.text,
                 i.type,
                 options = new
@@ -51,11 +54,10 @@ namespace DB_Sytem
             .ToList();
 
 
-
             var exam = context.exams.Where(i => i.exam_ID == Exam_id).Select(c => new { c.course.name, c.course.grade, c.duration }).FirstOrDefault();
 
-            lbl_crsName.Text += $" {exam.name}";
-            lbl_grade.Text += exam.grade;
+            lbl_crsName.Text = $"Course name : {exam.name}";
+            lbl_grade.Text += " ? /" + exam.grade;
             timer1.Interval = 1000;
             timer1.Start();
             int yOffset = 20; // Initial Y offset
@@ -66,7 +68,6 @@ namespace DB_Sytem
                 {
                     // Create a GroupBox to contain the question label and radio buttons
                     GroupBox groupBox = new GroupBox();
-
                     groupBox.Text = $"Question {i}: {examQuestions[i - 1].text}";
                     groupBox.Font = new Font(groupBox.Font.FontFamily, 12, FontStyle.Bold);
                     groupBox.Location = new System.Drawing.Point(10, yOffset);
@@ -133,10 +134,9 @@ namespace DB_Sytem
             if (remainingSeconds <= 0)
             {
                 timer1.Stop();
-                MessageBox.Show("Countdown finished!");
+                MessageBox.Show("Exam Time finished!");
                 this.Close();
             }
-
 
         }
         private void UpdateTimeLabel()
@@ -156,9 +156,21 @@ namespace DB_Sytem
         /// </summary>
 
         List<string> selectedAnswers = new List<string>();
-        private void btn_submit_Click(object sender, EventArgs e)
+        async private void btn_submit_Click(object sender, EventArgs e)
         {
             selectedAnswers.Clear();
+
+            ITIDBContextProcedures dbProc = new ITIDBContextProcedures(context);
+
+
+            //Answers
+            //var CorrectAnswers = context.questions
+            //.Where(q => q.exams.Any(e => e.exam_ID == Exam_id))
+            //.Select(i => new
+            //{
+            //    i.correct_ans
+            //})
+            //.ToList();
 
             foreach (Control control in panel1.Controls)
             {
@@ -166,10 +178,64 @@ namespace DB_Sytem
                 {
                     string selectedAnswer = GetSelectedAnswer(groupBox);
                     selectedAnswers.Add(selectedAnswer);
-                    MessageBox.Show(selectedAnswer);
+
 
                 }
             }
+            // Assuming you have access to context for database operations
+            var examQuestions = context.questions
+           .Where(q => q.exams.Any(e => e.exam_ID == Exam_id))
+           .Select(i => new
+           {
+               i.question_ID,
+               i.text,
+               i.type,
+               options = new
+               {
+                   i.question_option.opt1,
+                   i.question_option.opt2,
+                   i.question_option.opt3,
+                   i.question_option.opt4
+               }
+           })
+           .ToList();
+
+            for (int i = 0; i < examQuestions.Count; i++)
+            {
+                // Assuming you have logic to get student's selected answer for the current question
+
+                var question = examQuestions[i];
+                var selectedAnswer = selectedAnswers[i];
+                // Get the correct answer for the current question
+                var correctAnswer = context.questions.FirstOrDefault(q => q.question_ID == question.question_ID)?.correct_ans;
+
+
+                // Calculate grade
+                int grade = (selectedAnswer == correctAnswer) ? 10 : 0; // You can adjust this logic based on your grading system
+
+                // Insert into st_answer table
+                st_answer newAnswer = new st_answer
+                {
+                    exam_ID = Exam_id,
+                    st_ID = St_ID,
+                    question_ID = question.question_ID,
+                    answer = selectedAnswer,
+                    grade = grade
+                };
+
+                context.st_answers.Add(newAnswer);
+                //OutputParameter<int> val = new OutputParameter<int>();
+                await dbProc.exam_correctionAsync(Exam_id, St_ID);
+
+            }
+
+            // Save changes to the database
+            context.SaveChanges();
+
+            var TotalDegree = context.st_exams.FirstOrDefault(i => i.st_ID == St_ID && i.exam_ID == Exam_id)?.total_degree;
+            MessageBox.Show(TotalDegree.ToString(), "Final Grade", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            this.Close();
         }
 
         private string GetSelectedAnswer(GroupBox groupBox)

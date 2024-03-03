@@ -132,6 +132,10 @@
          "ObjectType": 1
       },
       {
+         "Name": "[dbo].[exam_correction]",
+         "ObjectType": 1
+      },
+      {
          "Name": "[dbo].[Generate_Exam]",
          "ObjectType": 1
       },

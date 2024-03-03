@@ -46,7 +46,6 @@ namespace DB_Sytem
                         this.Hide();
                         Student_HomePage st_page = new Student_HomePage(txt_name.Text, int.Parse(txt_pass.Text));
 
-
                         st_page.ShowDialog();
                         this.Close();
                     }

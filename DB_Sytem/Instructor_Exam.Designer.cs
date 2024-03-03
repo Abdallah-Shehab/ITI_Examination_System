@@ -206,6 +206,7 @@
             groupBox2.Controls.Add(cb_subject);
             groupBox2.Controls.Add(btn_create);
             groupBox2.Controls.Add(button8);
+            groupBox2.Enabled = false;
             groupBox2.Font = new Font("Segoe UI", 12F);
             groupBox2.Location = new Point(687, 16);
             groupBox2.Name = "groupBox2";
@@ -289,13 +290,14 @@
             // 
             // num_duration
             // 
+            num_duration.Enabled = false;
             num_duration.Location = new Point(430, 111);
             num_duration.Maximum = new decimal(new int[] { 180, 0, 0, 0 });
-            num_duration.Minimum = new decimal(new int[] { 10, 0, 0, 0 });
+            num_duration.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             num_duration.Name = "num_duration";
             num_duration.Size = new Size(171, 29);
             num_duration.TabIndex = 8;
-            num_duration.Value = new decimal(new int[] { 10, 0, 0, 0 });
+            num_duration.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // label2
             // 
@@ -351,6 +353,7 @@
             // 
             // cb_dept
             // 
+            cb_dept.Enabled = false;
             cb_dept.Font = new Font("Segoe UI", 12F);
             cb_dept.FormattingEnabled = true;
             cb_dept.Location = new Point(230, 53);

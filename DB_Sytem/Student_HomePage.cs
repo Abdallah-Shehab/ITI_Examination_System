@@ -34,7 +34,7 @@ namespace DB_Sytem
             btn_start.Enabled = false;
 
             var st_exams = context.exams
-            .Where(s => s.st_exams.Any(c => c.st_ID == 1))
+            .Where(s => s.st_exams.Any(c => c.st_ID == st_ID))
             .Select(e => new { e.exam_ID, Coures = e.course.name.Trim(), e.time, e.date, e.duration, e.course.grade })
             .ToList();
             dgv_exams.DataSource = st_exams;
@@ -71,7 +71,10 @@ namespace DB_Sytem
                 else
                 {
                     btn_start.Enabled = false;
-
+                    this.Hide();
+                    Exam_Page ep = new Exam_Page(St_exam_ID, st_ID, Left_Duration);
+                    ep.ShowDialog();
+                    this.Close();
                 }
             }
         }
